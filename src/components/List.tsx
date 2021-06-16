@@ -8,7 +8,7 @@ interface props {
 
 const List: React.FC<props> = ({ people, setPeople }) => {
   
-
+  
   
 
   const renderList = (): JSX.Element[] => {
@@ -21,7 +21,7 @@ const List: React.FC<props> = ({ people, setPeople }) => {
           </div>
           <p>{person.age} years old</p>
           <p className="List-note">{person.note}</p>
-          
+          <button  value={person.id}>Delete</button>
         </li>
       );
     });

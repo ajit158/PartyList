@@ -5,7 +5,7 @@ import AddToList from './components/AddToList';
 
 export interface Istate {
   people: {
-    
+    id:number,
     name: string,
     age:number,
     url: string,
@@ -16,6 +16,7 @@ export interface Istate {
 function App() {
   const [people, setPeople] = useState<Istate["people"]>([
     {
+      id: 1,
       name: 'Ajit',
       age:25,
       url:"",

@@ -8,6 +8,7 @@ interface Iprop {
 
 const AddToList: React.FC<Iprop> = ({people, setPeople}) => {
   const [input, setInput] = useState({
+    id: '',
     name: "",
     age: "",
     note: "",
@@ -29,7 +30,8 @@ const AddToList: React.FC<Iprop> = ({people, setPeople}) => {
 
       setPeople([
           ...people,
-          {
+          { 
+              id: parseInt(input.id),
               name:input.name,
               age: parseInt(input.age),
               url:input.img,
@@ -38,6 +40,7 @@ const AddToList: React.FC<Iprop> = ({people, setPeople}) => {
       ])
 
       setInput({
+        id: "",
         name: "",
         age: "",
         note: "",
@@ -47,6 +50,14 @@ const AddToList: React.FC<Iprop> = ({people, setPeople}) => {
 
   return (
     <div className="AddToList">
+       <input
+        type="number"
+        placeholder="Input ID"
+        name="id"
+        className="AddToList-input"
+        onChange={handleChange}
+        value={input.id}
+      />
       <input
         type="text"
         placeholder="Input Name"
